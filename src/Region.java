@@ -19,8 +19,23 @@ abstract class Region {
 		return (int) y;
 	}
 	
+	public int getW()
+	{
+		return (int) width;
+	}
+	
+	public int getH()
+	{
+		return (int) height;
+	}
+	
+	public int getV()
+	{
+		return velocity;
+	}
+	
 	public double int getSize()
 	{
-		return (int) 
+		return (int); 
 	}
 }
