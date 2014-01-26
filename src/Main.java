@@ -86,8 +86,9 @@ public class Main extends JApplet implements Runnable, MouseListener {
 //                        	regions.get(i).bounceX(); // Region Bouncing
 //                    	}
 //        			}
-        		} catch (InterruptedException e) {}
+        		} //catch (InterruptedException e) {}
         	}
+	
 	}
          
 }
