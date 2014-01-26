@@ -19,8 +19,11 @@ public class Main extends JApplet implements Runnable, MouseListener {
     public void init() {
     	resize(800,800);
     	
-    	targets.add(new Target()); // Targets population
-    	regions.add(new Region()); // Regions population
+    	for (int i = 1; i < 8; i++){
+    		targets.add(new DiscV(i*100, 0, 10.0, 10)); // Targets Vert population
+    		targets.add(new DiscH(0, i*100, 10.0, 10)); // Targets Horiz population
+    	}
+    	//regions.add(new Region()); // Regions population
     	
         addMouseListener(this);
         t = new Thread(this);
@@ -32,17 +35,17 @@ public class Main extends JApplet implements Runnable, MouseListener {
     	g.setColor(Color.white); // Background flushing
     	g.fillRect(0,0,800,800);
     	
-    	g.setColor(Color.black);
+    	g.setColor(Color.red);
     	for(int i = 0; i < targets.size(); i++) // Target painting
     	{
     		g.fillOval(targets.get(i).getX(), targets.get(i).getY(), targets.get(i).getSize(), targets.get(i).getSize());
     	}
     	
-    	g.setColor(Color.red);
-    	for(int i = 0; i < regions.size(); i++) // Region painting
-    	{
-    		g.fillRect(regions.get(i).getX(), regions.get(i).getY(), regions.get(i).getW(), regions.get(i).getH());
-    	}
+//    	g.setColor(Color.red);
+//    	for(int i = 0; i < regions.size(); i++) // Region painting
+//    	{
+//    		g.fillRect(regions.get(i).getX(), regions.get(i).getY(), regions.get(i).getW(), regions.get(i).getH());
+//    	}
     	
     }
     
@@ -50,10 +53,12 @@ public class Main extends JApplet implements Runnable, MouseListener {
     	int x = e.getX();
     	int y = e.getY();
     	
-    	if(x > targets.get(i).getX() && x < targets.get(i).getX() + targets.get(i).getSize() && y > targets.get(i).getY() && y < targets.get(i).getY() + targets.get(i).getSize())
-		{
-			targets.remove(i);
-		}
+    	for (int i = 0; i < targets.size(); i++){
+    		if(x > targets.get(i).getX() && x < targets.get(i).getX() + targets.get(i).getSize() && y > targets.get(i).getY() && y < targets.get(i).getY() + targets.get(i).getSize())
+    		{
+    			targets.remove(i);
+    		}
+    	}
     }
     
     public void mousePressed(MouseEvent e) {}
@@ -66,21 +71,21 @@ public class Main extends JApplet implements Runnable, MouseListener {
         	try {while(true) {
         		for(int i = 0; i < targets.size(); i++) // Target Cycling
         		{
-        			targets.get(i).move() // Target Movement
-            		if(targets.get(i).getY() < 0 || targets.get(i).getY() > 490) // Target Zones
-                    {
-                        targets.get(i).bounceX(); // Target Bouncing
-                    }
+        			targets.get(i).move(); // Target Movement
+//            		if(targets.get(i).getY() < 0 || targets.get(i).getY() > 490) // Target Zones
+//                    {
+//                        targets.get(i).bounceX(); // Target Bouncing
+//                    }
         		}
         		
-        		for(int i = 0; i < regions.size(); i++) // Region Cycling
-        		{
-        			regions.get(i).move() // Region Movement
-        			if(regions.get(i).getY() < 0 || regions.get(i).getY() > 490) // Region Zones
-                    {
-                        regions.get(i).bounceX(); // Region Bouncing
-                    }
-        		}
+//        		for(int i = 0; i < regions.size(); i++) // Region Cycling
+//        		{
+//        			regions.get(i).move() // Region Movement
+//        			if(regions.get(i).getY() < 0 || regions.get(i).getY() > 490) // Region Zones
+//                    {
+//                        regions.get(i).bounceX(); // Region Bouncing
+//                    }
+//        		}
         	}
     	}
         

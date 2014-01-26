@@ -11,7 +11,7 @@ public class DiscH extends Target {
 
 	void move(){
 		x = x + (Math.cos(theta) * velocity);
-		if (x < 0 || x > 500)
+		if (x < 0 || x > 800)
 			bounce();
 	}
 	

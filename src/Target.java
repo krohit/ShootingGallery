@@ -16,7 +16,7 @@ abstract class Target {
 		return (int) y;
 	}
 	
-	public int getSide(){
+	public int getSize(){
 		return side;
 	}
 	
