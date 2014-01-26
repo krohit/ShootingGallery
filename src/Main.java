@@ -67,28 +67,27 @@ public class Main extends JApplet implements Runnable, MouseListener {
     public void mouseExited(MouseEvent e) {}
     
 	public void run() {
-		
-        	try {while(true) {
-        		for(int i = 0; i < targets.size(); i++) // Target Cycling
-        		{
-        			targets.get(i).move(); // Target Movement
-//            		if(targets.get(i).getY() < 0 || targets.get(i).getY() > 490) // Target Zones
-//                    {
-//                        targets.get(i).bounceX(); // Target Bouncing
-//                    }
-        		}
+        	while(true) {
+        		try {
+        			for(int i = 0; i < targets.size(); i++) // Target Cycling
+        			{
+        				targets.get(i).move(); // Target Movement
+//            			if(targets.get(i).getY() < 0 || targets.get(i).getY() > 490) // Target Zones
+//                    	{
+//                        	targets.get(i).bounceX(); // Target Bouncing
+//                    	}
+        			}
         		
-//        		for(int i = 0; i < regions.size(); i++) // Region Cycling
-//        		{
-//        			regions.get(i).move() // Region Movement
-//        			if(regions.get(i).getY() < 0 || regions.get(i).getY() > 490) // Region Zones
-//                    {
-//                        regions.get(i).bounceX(); // Region Bouncing
-//                    }
-//        		}
+//        			for(int i = 0; i < regions.size(); i++) // Region Cycling
+//        			{
+//        				regions.get(i).move() // Region Movement
+//        				if(regions.get(i).getY() < 0 || regions.get(i).getY() > 490) // Region Zones
+//                    	{
+//                        	regions.get(i).bounceX(); // Region Bouncing
+//                    	}
+//        			}
+        		} catch (InterruptedException e) {}
         	}
-    	}
-        
-        catch (InterruptedException e) {}
-    }
+	}
+         
 }
