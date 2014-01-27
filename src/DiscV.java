@@ -11,7 +11,7 @@ public class DiscV extends Target{
 	
 	public void move (){
 		y = y + (Math.sin(theta) * velocity);
-		if (y < 0 || y > 500)
+		if (y < (0-side) || y > 800)
 			bounce();
 	}
 	
