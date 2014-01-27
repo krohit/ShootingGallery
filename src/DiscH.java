@@ -11,12 +11,12 @@ public class DiscH extends Target {
 
 	void move(){
 		x = x + (Math.cos(theta) * velocity);
-		if (x < 0 || x > 800)
+		if (x < (0-side) || x > 800)
 			bounce();
 	}
 	
 	void bounce (){
 		velocity = -velocity;
-		theta = Math.PI - theta;
+		//theta = Math.PI - theta;
 	}
 }

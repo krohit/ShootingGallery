@@ -9,7 +9,7 @@ import java.awt.event.*;
 public class Main extends JApplet implements Runnable, MouseListener { 
 
     Thread t;   
-    int timeStep = 100;
+    int timeStep = 75;
     Random r = new Random();
     
     
@@ -20,8 +20,8 @@ public class Main extends JApplet implements Runnable, MouseListener {
     	resize(800,800);
     	
     	for (int i = 1; i < 8; i++){
-    		targets.add(new DiscV(i*100, 0, 10.0, 10)); // Targets Vert population
-    		targets.add(new DiscH(0, i*100, 10.0, 10)); // Targets Horiz population
+    		targets.add(new DiscV(i*100, 0, 10.0, 30)); // Targets Vert population
+    		targets.add(new DiscH(0, i*100, 10.0, 30)); // Targets Horiz population
     	}
     	//regions.add(new Region()); // Regions population
     	
@@ -77,7 +77,7 @@ public class Main extends JApplet implements Runnable, MouseListener {
 //                        	targets.get(i).bounceX(); // Target Bouncing
 //                    	}
         			}
-        		
+        			
 //        			for(int i = 0; i < regions.size(); i++) // Region Cycling
 //        			{
 //        				regions.get(i).move() // Region Movement
@@ -86,7 +86,9 @@ public class Main extends JApplet implements Runnable, MouseListener {
 //                        	regions.get(i).bounceX(); // Region Bouncing
 //                    	}
 //        			}
-        		} //catch (InterruptedException e) {}
+        			repaint ();
+        			t.sleep (timeStep);
+        		} catch (InterruptedException e) {}
         	}
 	
 	}
