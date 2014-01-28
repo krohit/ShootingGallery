@@ -11,7 +11,7 @@ public class Main extends JApplet implements Runnable, MouseListener {
     Thread t;   
     int timeStep = 75;
     Random r = new Random();
-    
+    Image target1, target2;
     
     ArrayList <Target> targets = new ArrayList <Target> (); // Target Setup
     ArrayList <Region> regions = new ArrayList <Region> (); // Region Setup
@@ -23,6 +23,9 @@ public class Main extends JApplet implements Runnable, MouseListener {
     		targets.add(new DiscV(i*100, 0, 10.0, 30)); // Targets Vert population
     		targets.add(new DiscH(0, i*100, 10.0, 30)); // Targets Horiz population
     	}
+    	
+    	target1 = getImage (getDocumentBase(), "clay_pigeon.gif");
+    	target2 = getImage (getDocumentBase(), "")
     	//regions.add(new Region()); // Regions population
     	
         addMouseListener(this);
