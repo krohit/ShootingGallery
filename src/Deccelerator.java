@@ -1,6 +1,6 @@
 
-public class Accelerator extends Region {
-	public Accelerator()
+public class Deccelerator extends Region {
+	public Deccelerator()
 	{
 		x = 0;
 		y = 0;
@@ -11,7 +11,7 @@ public class Accelerator extends Region {
 		velChange = 0;
 	}
 	
-	Public Accelerator(int x, int y, int v, int w, int h, int vc)
+	Public Deccelerator(int x, int y, int v, int w, int h, int vc)
 	{
 		this.x = x;
 		this.y = y;

@@ -8,6 +8,7 @@ abstract class Region {
 	double delta; // Angle for velocity to act on
 	double width; // width of regional boundary
 	double height; // height of regional boundary
+	double velChange; // adjusts velocity within region
 	
 	public int getX()
 	{
@@ -29,13 +30,13 @@ abstract class Region {
 		return (int) height;
 	}
 	
-	public int getV()
+	public double getV()
 	{
 		return velocity;
 	}
 	
-	public double int getSize()
+	public double getVC()
 	{
-		return (int); 
+		return velChange;
 	}
 }

@@ -4,3 +4,11 @@
 bin/.gitignore
 
 .project
+
+bin/Accelerator.class
+
+bin/Accelerator.class
+
+bin/Region.class
+
+*.class
