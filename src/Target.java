@@ -6,13 +6,7 @@ abstract class Target {
 	double theta; //angle of mvmt
 	int side; //size of target
 	
-	Target (double x, double y, double velocity, double theta, int side){
-		this.x = x;
-		this.y = y;
-		this.velocity = velocity;
-		this.theta = theta;
-		this.side = side;
-	}
+	Target (){}
 	
 	public int getX(){
 		return (int) x;
@@ -22,7 +16,7 @@ abstract class Target {
 		return (int) y;
 	}
 	
-	public int getSide(){
+	public int getSize(){
 		return side;
 	}
 	
@@ -33,5 +27,9 @@ abstract class Target {
 	public double getTheta(){
 		return (double) theta;
 	}
+	
+	abstract void move();
+	
+	abstract void bounce();
 
 }
