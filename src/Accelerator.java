@@ -9,9 +9,13 @@ public class Accelerator extends Region {
 		height = 0;
 		width = 0;
 		velChange = 0;
+		xtBound = 0;
+		xbBound = 0;
+		ytBound = 0;
+		ybBound = 0;
 	}
 	
-	Public Accelerator(int x, int y, int v, int w, int h, int vc)
+	public Accelerator(double x, double y, double v, int w, int h, double vc, int xt, int xb, int yt, int yb)
 	{
 		this.x = x;
 		this.y = y;
@@ -23,7 +27,7 @@ public class Accelerator extends Region {
 	
 	public void setVC(int vc)
 	{
-		velChange = vc
+		velChange = vc;
 	}
 	
 	public void setV(int v)
@@ -31,4 +35,13 @@ public class Accelerator extends Region {
 		velocity = v;
 	}
 	
+	public void move()
+	{
+		y = y + velocity;
+	}
+	
+	public void bounce()
+	{
+        velocity = -velocity;
+    }
 }

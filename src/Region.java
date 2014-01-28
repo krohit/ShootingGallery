@@ -9,6 +9,8 @@ abstract class Region {
 	double width; // width of regional boundary
 	double height; // height of regional boundary
 	double velChange; // adjusts velocity within region
+	int xtBound,xbBound; // x top and bottom boundary
+	int ytBound,ybBound; // y top and bottom boundary
 	
 	public int getX()
 	{
@@ -44,4 +46,20 @@ abstract class Region {
 	{
 		velChange = vc;
 	}
+	
+	public void setYBound(int a, int b)
+	{
+		ytBound = a;
+		ybBound = b;
+	}
+	
+	public void setXBound(int a, int b)
+	{
+		xtBound = a;
+		xbBound = b;
+	}
+	
+	abstract void move();
+	
+	abstract void bounce();
 }
