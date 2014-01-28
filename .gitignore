@@ -18,3 +18,7 @@ bin/java.policy.applet
 >>>>>>> a1df171e65deab914884698d1acc01a97f45466a
 
 *.class
+
+*.class
+
+*.class

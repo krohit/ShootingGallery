@@ -20,12 +20,21 @@ public class Main extends JApplet implements Runnable, MouseListener {
     	resize(800,800);
     	
     	for (int i = 1; i < 8; i++){
-    		targets.add(new DiscV(i*100, 0, 10.0, 30)); // Targets Vert population
-    		targets.add(new DiscH(0, i*100, 10.0, 30)); // Targets Horiz population
+    		if (i%2 == 0)
+    			targets.add(new DiscV(i*100, 0, 10.0, 30, "clay_pigeon.gif")); // Targets Vert population
+    		else
+    			targets.add(new DiscV(i*100, 0, 10.0, 30, "Disc1.gif")); // Targets Vert population
+    	}
+    	for (int i = 1; i < 8; i++){
+    		if (i%2 == 0)
+    			targets.add(new DiscH(0, i*100, 10.0, 30, "Disc1.gif")); // Targets Horiz population
+    		else
+    			targets.add(new DiscH(0, i*100, 10.0, 30, "clay_pigeon.gif")); // Targets Horiz population
     	}
     	
     	target1 = getImage (getDocumentBase(), "clay_pigeon.gif");
-    	target2 = getImage (getDocumentBase(), "")
+    	target2 = getImage (getDocumentBase(), "Disc1.gif");
+    	
     	//regions.add(new Region()); // Regions population
     	
         addMouseListener(this);
@@ -41,7 +50,11 @@ public class Main extends JApplet implements Runnable, MouseListener {
     	g.setColor(Color.red);
     	for(int i = 0; i < targets.size(); i++) // Target painting
     	{
-    		g.fillOval(targets.get(i).getX(), targets.get(i).getY(), targets.get(i).getSize(), targets.get(i).getSize());
+    		if (targets.get(i).getImageType() == "clay_pigeon.gif")	
+    			g.drawImage(target1, targets.get(i).getX(), targets.get(i).getY(), targets.get(i).getSize(), targets.get(i).getSize(), this);
+    		if (targets.get(i).getImageType() == "Disc1.gif")
+    			g.drawImage(target2, targets.get(i).getX(), targets.get(i).getY(), targets.get(i).getSize(), targets.get(i).getSize(), this);
+    		
     	}
     	
 //    	g.setColor(Color.red);
@@ -72,9 +85,9 @@ public class Main extends JApplet implements Runnable, MouseListener {
 	public void run() {
         	while(true) {
         		try {
-        			for(int i = 0; i < targets.size(); i++) // Target Cycling
+        			for(Target q:targets) // Target Cycling
         			{
-        				targets.get(i).move(); // Target Movement
+        				q.move(); // Target Movement
 //            			if(targets.get(i).getY() < 0 || targets.get(i).getY() > 490) // Target Zones
 //                    	{
 //                        	targets.get(i).bounceX(); // Target Bouncing

@@ -5,6 +5,7 @@ abstract class Target {
 	double velocity;
 	double theta; //angle of mvmt
 	int side; //size of target
+	String imageDraw;
 	
 	Target (){}
 	
@@ -26,6 +27,10 @@ abstract class Target {
 	
 	public double getTheta(){
 		return (double) theta;
+	}
+	
+	public String getImageType(){
+		return imageDraw;
 	}
 	
 	abstract void move();
