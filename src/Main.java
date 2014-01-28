@@ -48,12 +48,12 @@ public class Main extends JApplet implements Runnable, MouseListener {
     	g.fillRect(0,0,800,800);
     	
     	g.setColor(Color.red);
-    	for(int i = 0; i < targets.size(); i++) // Target painting
+    	for (Target a:targets) // Target painting
     	{
-    		if (targets.get(i).getImageType() == "clay_pigeon.gif")	
-    			g.drawImage(target1, targets.get(i).getX(), targets.get(i).getY(), targets.get(i).getSize(), targets.get(i).getSize(), this);
-    		if (targets.get(i).getImageType() == "Disc1.gif")
-    			g.drawImage(target2, targets.get(i).getX(), targets.get(i).getY(), targets.get(i).getSize(), targets.get(i).getSize(), this);
+    		if (a.getImageType() == "clay_pigeon.gif")	
+    			g.drawImage(target1,a.getX(), a.getY(), a.getSize(),a.getSize(), this);
+    		if (a.getImageType() == "Disc1.gif")
+    			g.drawImage(target2, a.getX(), a.getY(), a.getSize(), a.getSize(), this);
     		
     	}
     	

@@ -18,6 +18,5 @@ public class DiscH extends Target {
 	
 	void bounce (){
 		velocity = -velocity;
-		//theta = Math.PI - theta;
 	}
 }

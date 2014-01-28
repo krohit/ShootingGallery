@@ -12,13 +12,12 @@ public class DiscV extends Target{
 	
 	public void move (){
 		y = y + (Math.sin(theta) * velocity);
-		if (y < (0-side) || y > 800)
+		if (y > 800)
 			bounce();
 	}
 	
 	void bounce (){
-		velocity = -velocity;
-		theta = Math.PI - theta;
+		y = -10;
 	}
 	
 	
