@@ -39,4 +39,9 @@ abstract class Region {
 	{
 		return velChange;
 	}
+	
+	public void setVC(double vc)
+	{
+		velChange = vc;
+	}
 }
